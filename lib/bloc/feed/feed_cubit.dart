@@ -41,10 +41,10 @@ class FeedCubit extends Cubit<FeedState> {
   }
 
   createInter() {
-    if (muchTime == 1)
-      Ads().createInterstitialAd();
-    else
-      print("Not yet" + muchTime.toString());
+    //   if (muchTime == 1)
+    //     Ads().createInterstitialAd();
+    //   else
+    //     print("Not yet" + muchTime.toString());
   }
 
   aZero(context, dare, truth) {

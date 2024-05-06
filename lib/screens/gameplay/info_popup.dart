@@ -334,8 +334,8 @@ class InfoPopup extends StatelessWidget {
                         BlocProvider.of<FeedCubit>(context).levelDone(context);
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Mystyle.rightAnswer,
-                      ),
+                          // primary: Mystyle.rightAnswer,
+                          ),
                       child: Text(
                         "التالي",
                         style: Mystyle.truefalsewhite,
@@ -411,8 +411,8 @@ class InfoPopup extends StatelessWidget {
                         Navigator.pushReplacementNamed(context, Splashs.routeName);
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.black54,
-                      ),
+                          // primary: Colors.black54,
+                          ),
                       child: Text(
                         "رجوع للصفحة الأولى",
                         style: Mystyle.truefalsewhite,

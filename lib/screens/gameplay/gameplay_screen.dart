@@ -165,8 +165,8 @@ class _GamePlayState extends State<GamePlay> with TickerProviderStateMixin {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Mystyle.rightAnswer,
-                      ),
+                          // primary: Mystyle.rightAnswer,
+                          ),
                       child: Text(
                         "رجوع",
                         style: Mystyle.truefalsewhite,

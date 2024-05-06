@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
+// import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gaza/bloc/feed/feed_cubit.dart';
 import 'package:gaza/bloc/points/points_cubit.dart';
@@ -220,14 +220,14 @@ class _MenuState extends State<Menu> {
                         SizedBox(height: 20),
                         InkWell(
                           onTap: () async {
-                            final Email email = Email(
-                              body: "",
-                              subject: 'لعبة تاريخ',
-                              recipients: ['masters.tech.otm@gmail.com'],
-                              isHTML: false,
-                            );
+                            // final Email email = Email(
+                            //   body: "",
+                            //   subject: 'لعبة تاريخ',
+                            //   recipients: ['masters.tech.otm@gmail.com'],
+                            //   isHTML: false,
+                            // );
 
-                            await FlutterEmailSender.send(email);
+                            // await FlutterEmailSender.send(email);
                           },
                           highlightColor: Colors.transparent,
                           splashColor: Colors.transparent,

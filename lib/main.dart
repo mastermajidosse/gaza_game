@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:gaza/bloc/provider_setup.dart';
 import 'package:gaza/screens/others/splash.dart';
 import 'utils/route_genetator.dart' as router;
@@ -10,7 +10,7 @@ import 'utils/route_genetator.dart' as router;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // await EasyLocalization.ensureInitialized();
-  await MobileAds.instance.initialize();
+  // await MobileAds.instance.initialize();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);

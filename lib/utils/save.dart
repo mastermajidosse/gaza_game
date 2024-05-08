@@ -11,7 +11,8 @@ class Save {
 
   static List<String> freinds = [];
 
-  static int life = 3;
+  // life heart
+  static int life = 10;
 
   static List<String> level = ["0"];
 

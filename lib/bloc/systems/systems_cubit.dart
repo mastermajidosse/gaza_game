@@ -27,11 +27,11 @@ class SystemsCubit extends Cubit<SystemsState> {
     int yy = Save.getyear() ?? 2022;
     int mm = Save.getmonth() ?? now.month;
     int dd = Save.getday() ?? now.day - 2;
-    // await Save().SetLife(xlife: 3);
+    // await Save().SetLife(xlife: 10); // 3
     print("object");
     if (calculateDifference(DateTime(yy, mm, dd)) <= -1) {
       print("calculateDifference true");
-      await Save().SetLife(xlife: 3);
+      await Save().SetLife(xlife: 10);// here was 3 now is 10
       await Save().Setdaytime(now.day);
       await Save().Setmonthtime(now.month);
       await Save().Setyeartime(now.year);

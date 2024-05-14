@@ -25,9 +25,7 @@ class More extends StatefulWidget {
 
 class _MoreState extends State<More> with SingleTickerProviderStateMixin {
   launchURL(url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
+    if (!await launchUrl(Uri.parse(url))) {
       throw 'Could not launch $url';
     }
   }
@@ -41,22 +39,96 @@ class _MoreState extends State<More> with SingleTickerProviderStateMixin {
 
   var scaffoldKey = new GlobalKey<ScaffoldState>();
 
+  Widget buildCard({
+    String iconUrl = 'assets/heart.png',
+    String description =
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo.',
+    String action = 'Action',
+    String url = '',
+  }) {
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Ink.image(
+                image: AssetImage(iconUrl),
+                width: double.infinity,
+                height: 145,
+                fit: BoxFit.fitHeight,
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Text(
+              description,
+              textAlign: TextAlign.left,
+              style: TextStyle(),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: SizedBox(
+              width: 300,
+              height: 40,
+              child: TextButton(
+                onPressed: () {
+                  launchURL(url);
+                },
+                style: TextButton.styleFrom(
+                  alignment: Alignment.center,
+                  elevation: 3,
+                  backgroundColor: Color(0xFF7469B6),
+                  foregroundColor: Colors.white, //Color(0xFFFFE6E6),
+                ),
+                child: Text(
+                  action,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      color: Color(0xFFc9c9ff),
+      shadowColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25),
+      ),
+      elevation: 5,
+      margin: EdgeInsets.all(8.0),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MoreCubit, MoreState>(builder: (context, state) {
       return Directionality(
-        textDirection: TextDirection.rtl,
+        textDirection: TextDirection.ltr, //.rtl,
         child: Scaffold(
           key: scaffoldKey,
-          backgroundColor: Color.fromARGB(255, 255, 241, 211),
+          backgroundColor: Color(0xFF282739),
           // backgroundColor: Color.fromARGB(255, 245, 240, 228),rgb()
           appBar: AppBar(
-            backgroundColor: Mystyle.colodark,
+            backgroundColor:
+                Color.fromARGB(255, 229, 229, 251), //Mystyle.colodark,
             elevation: 1.0,
             leading: BackButton(
-              color: Mystyle.textlighColo,
+              color: Color(0xFF282739), //Mystyle.textlighColo,
             ),
-            title: Text("العاب اخرى", style: Mystyle.moretitleTextStyle),
+            title: Text(
+              "للدعم",
+              style: TextStyle(
+                fontFamily: 'butros',
+                color: Color(0xFF282739),
+                fontSize: 28.sp,
+                fontWeight: FontWeight.w600,
+              ), //Mystyle.moretitleTextStyle,
+            ),
             centerTitle: true,
           ),
           body: state is MoreLoading
@@ -64,114 +136,17 @@ class _MoreState extends State<More> with SingleTickerProviderStateMixin {
                   color: Colors.white,
                   size: 50.0,
                   controller: AnimationController(
-                      vsync: this, duration: const Duration(milliseconds: 1200)),
+                      vsync: this,
+                      duration: const Duration(milliseconds: 1200)),
                 )
-              : state is MoreLoaded
-                  ? ListView.builder(
-                      itemCount: state.allgame.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return InkWell(
-                          onTap: () => launchURL(state.allgame[index].link),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                border: Border(
-                              bottom: BorderSide(
-                                color: Colors.black12,
-                              ),
-                            )),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    // mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 55,
-                                        height: 55,
-                                        child: CachedNetworkImage(
-                                          imageUrl: state.allgame[index].icon!,
-                                          height: 55.h,
-                                          width: double.infinity,
-                                          imageBuilder: (context, imageProvider) => Container(
-                                            height: 55.h,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: imageProvider,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          ),
-                                          placeholder: (context, url) => Center(
-                                            child: CircularProgressIndicator(),
-                                          ),
-                                          errorWidget: (context, url, error) => Icon(Icons.error),
-                                        ),
-
-                                        // Container(
-                                        //   width: 55,
-                                        //   height: 55,
-                                        //   decoration: BoxDecoration(
-                                        //     // color: Colors.black,
-                                        //     borderRadius:
-                                        //         BorderRadius.circular(100),
-                                        //     image: DecorationImage(
-                                        //       image: NetworkImage(
-                                        //       ),
-                                        //       fit: BoxFit.fitWidth,
-                                        //     ),
-                                        //   ),
-                                        //   child: Image.network(
-                                        //       "https://images.gofundme.com/nXZQjDEdnDuHrY96dXs1D6v7jp8=/720x405/https://d2g8igdw686xgo.cloudfront.net/64550899_1649356998460419_r.jpeg"),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              state.allgame[index].name.toString(),
-                                              style: Mystyle.butblackTextStyle,
-                                            ),
-                                            Text(
-                                              state.allgame[index].downloads.toString() + " تحميل",
-                                              style: Mystyle.butblackTextStyle,
-                                              // textAlign: TextAlign.right,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          "اضغط هنا",
-                                          style: Mystyle.smalltxt.copyWith(
-                                            color: Mystyle.colodarker,
-                                          ),
-                                        ),
-                                        Text(
-                                          "للتحميل",
-                                          style: Mystyle.smalltxt.copyWith(
-                                            color: Mystyle.colodarker,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    )
-                  : Container(),
+              : Column(
+                  children: [
+                    // icon, description, action, url
+                    buildCard(),
+                    buildCard(),
+                    buildCard(),
+                  ],
+                ),
         ),
       );
     });

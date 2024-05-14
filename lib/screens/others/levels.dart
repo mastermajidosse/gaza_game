@@ -216,7 +216,7 @@ class _LevelScreenState extends State<LevelScreen> {
       return Colors.teal[100];
     } else if ((status != "easy") && index < 20) {
       return Colors.blue[100];
-    } else if ((status == "hard" || status == "legendary")) {
+    } else if ((status == "hard") && index >= 20) {
       return Colors.red[200];
     } else {
       return Colors.grey;
@@ -238,7 +238,7 @@ class _LevelScreenState extends State<LevelScreen> {
         color: Colors.black45,
         size: 33,
       );
-    } else if ((status == "medium" || status == "easy") && index >= 20) {
+    } else if (status != "hard" && index >= 20) {
       return Icon(
         Icons.lock,
         color: Colors.black87,

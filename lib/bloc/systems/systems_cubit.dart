@@ -31,7 +31,7 @@ class SystemsCubit extends Cubit<SystemsState> {
     print("object");
     if (calculateDifference(DateTime(yy, mm, dd)) <= -1) {
       print("calculateDifference true");
-      await Save().SetLife(xlife: 10);// here was 3 now is 10
+      await Save().SetLife(xlife: 1000);// here was 3 now is 10
       await Save().Setdaytime(now.day);
       await Save().Setmonthtime(now.month);
       await Save().Setyeartime(now.year);
@@ -54,13 +54,14 @@ class SystemsCubit extends Cubit<SystemsState> {
 
     Save.level = Save.getlevel();
     Save.point = Save.getpoint() ?? 0;
-    Save.life = Save.getLife() ?? 10;
+    // Save.life = Save.getLife() ?? 10;
+    Save.life = 1000;
     refill();
   }
 
 // add remove
 
-  addlife({lifenum = 1}) {
+  addlife({lifenum = 100}) {// add 1
     Save().SetLife(xlife: lifenum);
     Save.life = lifenum;
     emit(SystemsHeart(lifenum));
@@ -77,7 +78,7 @@ class SystemsCubit extends Cubit<SystemsState> {
   }
 
   void startNewPartyAfterAd() async {
-    addlife(lifenum: 3);
+    addlife(lifenum: 300);//3 here
   }
 
   AdManager? adManager;

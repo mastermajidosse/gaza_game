@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Mystyle {
+  static String fontFamilyName = 'boutros';
   // ------ Colors --------
 
   static const Color primarycolo = Color(0xFF2b2e36);
@@ -26,98 +27,98 @@ class Mystyle {
     color: secondrycolo,
     fontWeight: FontWeight.w800,
     fontSize: 32,
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
   );
   static TextStyle titleMenu = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     color: Color(0xFFdbbb61),
     fontWeight: FontWeight.w800,
     fontSize: 66.sp,
   );
   static TextStyle textMenu = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     color: Colors.white,
     fontWeight: FontWeight.w800,
     fontSize: 38.sp,
   );
 
   static TextStyle tagsTextStyle = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     color: Colors.white,
     fontSize: ScreenUtil().setSp(34),
   );
 
   static TextStyle butTextStyle = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     color: Colors.white,
     fontSize: ScreenUtil().setSp(38),
     fontWeight: FontWeight.w600,
   );
   static TextStyle moretitleTextStyle = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     color: textlighColo,
     fontSize: 28.sp,
     fontWeight: FontWeight.w600,
   );
   static TextStyle butblackTextStyle = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     color: Color(0xff8E3200),
     fontSize: 17,
     fontWeight: FontWeight.w600,
   );
 
   static TextStyle descextStyle = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.w500,
     fontSize: ScreenUtil().setSp(42),
     color: Colors.black87,
   );
 
   static TextStyle titlebodyStyle = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: Colors.black,
     fontSize: ScreenUtil().setSp(64),
   );
 
   static TextStyle subtitlebodyStyle = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.w600,
     color: Colors.black,
     fontSize: ScreenUtil().setSp(54),
   );
 
   static TextStyle greenctexts = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: secondrycolo,
   );
   static TextStyle blackboldtexts = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: Colors.black,
     fontSize: ScreenUtil().setSp(26),
   );
   static TextStyle whiteboldtexts = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontSize: ScreenUtil().setSp(26),
   );
   static TextStyle truefalsewhite = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontSize: ScreenUtil().setSp(22),
   );
   static TextStyle smalltxtwhite = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontSize: ScreenUtil().setSp(18),
   );
   static TextStyle smalltxt = TextStyle(
-    fontFamily: "moh",
+    fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: Colors.black54,
     fontSize: ScreenUtil().setSp(18),
@@ -174,8 +175,8 @@ class Mystyle {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          Mystyle.colodark,
-          Mystyle.colotarikh,
+          Color(0xFF282739),//0xFF322C2B
+          Color(0xFF803D3B), //
         ],
         tileMode: TileMode.clamp,
       ),
@@ -209,7 +210,7 @@ class Mystyle {
 
   static buttonrounded() {
     return BoxDecoration(
-      color: Color(0xFF502514),
+      color: Color(0xFF212033),//502514
       borderRadius: BorderRadius.circular(100),
     );
   }

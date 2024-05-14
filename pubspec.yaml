@@ -98,6 +98,12 @@ flutter:
     - family: moh
       fonts:
         - asset: assets/moh.ttf
+    - family: kufi
+      fonts:
+        - asset: assets/fonts/ReemKufi.ttf
+    - family: boutros
+      fonts:
+        - asset: assets/fonts/Boutros.ttf
 
   # fonts:
   #   - family: Schyler

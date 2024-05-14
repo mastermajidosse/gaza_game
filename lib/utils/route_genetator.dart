@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gaza/screens/auth/onboarding_screen.dart';
 import 'package:gaza/screens/gameplay/gameplay_screen.dart';
+import 'package:gaza/screens/others/about_us.dart';
 import 'package:gaza/screens/others/continue.dart';
 import 'package:gaza/screens/others/levels.dart';
 import 'package:gaza/screens/others/menu.dart';
@@ -24,6 +26,10 @@ class RoutGenerator {
         return MaterialPageRoute(builder: (_) => LevelScreen());
       case GamePlay.routeName:
         return MaterialPageRoute(builder: (_) => GamePlay());
+      case OnboardingScreen.routeName:
+        return MaterialPageRoute(builder: (_) => OnboardingScreen());
+      case AboutUs.routeName:
+        return MaterialPageRoute(builder: (_) => AboutUs());
 ////
       default:
         return _errorRoute();

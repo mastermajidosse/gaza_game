@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gaza/bloc/systems/systems_cubit.dart';
+import 'package:gaza/screens/auth/onboarding_screen.dart';
 import 'package:gaza/screens/others/continue.dart';
 import 'package:gaza/screens/others/menu.dart';
 import 'package:gaza/utils/mystyle.dart';
@@ -40,7 +41,7 @@ class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => ContinueScreen()),
+        MaterialPageRoute(builder: (context) => ContinueScreen()),//OnboardingScreen
       );
     });
 

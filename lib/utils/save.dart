@@ -12,7 +12,7 @@ class Save {
   static List<String> freinds = [];
 
   // life heart
-  static int life = 10;
+  static int life = 1000;
 
   static List<String> level = ["0"];
 
@@ -22,7 +22,7 @@ class Save {
     return prefs.getInt("life");
   }
 
-  Future<bool> SetLife({int xlife = 10}) async {
+  Future<bool> SetLife({int xlife = 1000}) async {
     return prefs.setInt("life", xlife);
   }
 

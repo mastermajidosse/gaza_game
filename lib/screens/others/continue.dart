@@ -15,7 +15,7 @@ class ContinueScreen extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
-        backgroundColor: Color(0xFF552a16),
+        backgroundColor: Color(0xFF282739),//552a16
         body: SafeArea(
           child: Container(
             width: double.infinity,
@@ -41,7 +41,7 @@ class ContinueScreen extends StatelessWidget {
                   child: Container(
                     width: double.infinity,
                     height: 200.h,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 229, 229, 251),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

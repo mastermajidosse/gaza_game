@@ -48,20 +48,11 @@ class MoreCubit extends Cubit<MoreState> {
       lang: "عربي",
     ),
     Games(
-      name: "الكرة الزرقاء",
+      name: "محرك",
       downloads: 5500,
-      link: "https://play.google.com/store/apps/details?id=com.otot.blueball",
+      link: "https://play.google.com/store/apps/details?id=com.otot.moharik",
       icon:
-          "https://play-lh.googleusercontent.com/eL-tPwA4lLJRc8bbQM991b2MDS3nEtVviHR_pJZVUwEdVN3wK4IJT30sgYvW3L6OkYjJ=s128",
-      id: 1,
-      lang: "عربي",
-    ),
-    Games(
-      name: "لعبة مونو غولف",
-      downloads: 2000,
-      link: "https://play.google.com/store/apps/details?id=com.certaindeath.golfmasters",
-      icon:
-          "https://play-lh.googleusercontent.com/J5jIcqQ3MZxCcoPAMoRikh4sru6ky5Ty3NxOj98Kz2DUQufSzhoT6fzs7btiaTi-qQ=s128",
+          "https://play-lh.googleusercontent.com/mkPpZoNlHRt5xopuO1gIlM0htYRsGWOAzWJMJHXa-OgTE1hBG7XaWcShGV9YZNVc5IM=w240-h480",
       id: 1,
       lang: "عربي",
     ),

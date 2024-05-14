@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               // change themes
               theme: ThemeData(
                 primaryColor: Colors.black,
-                fontFamily: 'moh',
+                fontFamily: 'boutros',
               ),
               onGenerateRoute: router.RoutGenerator.generateRout,
               initialRoute: Splashs.routeName,

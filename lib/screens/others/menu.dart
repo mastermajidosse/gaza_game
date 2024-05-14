@@ -6,6 +6,7 @@ import 'package:gaza/bloc/feed/feed_cubit.dart';
 import 'package:gaza/bloc/points/points_cubit.dart';
 import 'package:gaza/bloc/systems/systems_cubit.dart';
 import 'package:gaza/screens/gameplay/gameplay_screen.dart';
+import 'package:gaza/screens/others/about_us.dart';
 import 'package:gaza/screens/others/levels.dart';
 import 'package:gaza/screens/others/more.dart';
 import 'package:gaza/screens/others/splash.dart';
@@ -150,14 +151,14 @@ class _MenuState extends State<Menu> {
                           builder: (context, state) {
                             return InkWell(
                               onTap: () {
-                                if (state is SystemsZero) {
-                                  Mystyle.snack(
-                                    scaffoldKey,
-                                    Icons.remove_from_queue_outlined,
-                                    Colors.red,
-                                    "لقد خسرت انتظر غدا للمحاولة مرة اخرى",
-                                  );
-                                } else
+                                // if (state is SystemsZero) {
+                                //   Mystyle.snack(
+                                //     scaffoldKey,
+                                //     Icons.remove_from_queue_outlined,
+                                //     Colors.red,
+                                //     "لقد خسرت انتظر غدا للمحاولة مرة اخرى",
+                                //   );
+                                // } else
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -207,7 +208,7 @@ class _MenuState extends State<Menu> {
                             ),
                             alignment: Alignment.center,
                             child: Text(
-                              'العاب اخرى',
+                              'تطبيقات اخرى',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 23,
@@ -219,7 +220,11 @@ class _MenuState extends State<Menu> {
                         ),
                         SizedBox(height: 20),
                         InkWell(
-                          onTap: () async {
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => AboutUs()),
+                            );
                             // final Email email = Email(
                             //   body: "",
                             //   subject: 'لعبة تاريخ',

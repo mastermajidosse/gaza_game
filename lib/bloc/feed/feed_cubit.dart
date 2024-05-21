@@ -9,7 +9,7 @@ import 'package:gaza/bloc/fullanswear/fullanswear_cubit.dart';
 import 'package:gaza/bloc/multi/multi_cubit.dart';
 import 'package:gaza/bloc/points/points_cubit.dart';
 import 'package:gaza/bloc/truefalse/trueorfalse_cubit.dart';
-import 'package:gaza/models/levelM.dart';
+import 'package:gaza/models/levelQ.dart';
 import 'package:gaza/screens/others/levels.dart';
 import 'package:gaza/services/getdata.dart';
 import 'package:gaza/utils/admob.dart';
@@ -118,19 +118,21 @@ class FeedCubit extends Cubit<FeedState> {
 
   removehelp(index, qst, scaffoldKey) async {
     emit(FeedLoading());
+    print("hel01");
+
     try {
-      if (qst.type == "one") {
-        if (qst.answers!.length > 3) {
-          Mystyle.snackb(
-              scaffoldKey, qst.answers!.substring(0, (qst.answers!.length / 3).toInt()).toString());
-        } else {
-          Mystyle.snackb(scaffoldKey, "لا توجد مساعدة الحروف اقل من تلاتة");
-        }
-      } else {
-        qstleveltd![index].falseanswers!.replaceRange(1, 2, [""]);
-      }
+      // if (qst.type == "one") {
+      //   if (qst.answers!.length > 3) {
+      //     Mystyle.snackb(
+      //         scaffoldKey, qst.answers!.substring(0, (qst.answers!.length / 3).toInt()).toString());
+      //   } else {
+      //     Mystyle.snackb(scaffoldKey, "لا توجد مساعدة الحروف اقل من تلاتة");
+      //   }
+      // } else {
+      // }
+      qstleveltd![index].falseanswers!.replaceRange(1, 2, [""]);
       help = false;
-      // print("help1");
+      print("help1");
       emit(FeedLoaded(qstleveltd!, index, levelnum, help: false));
     } catch (e) {
       emit(FeedError(e.toString()));

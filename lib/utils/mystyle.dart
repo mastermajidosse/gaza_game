@@ -12,8 +12,7 @@ class Mystyle {
   static const Color rightAnswer = Color(0xFF40bd75); // #40bd75
 
   static const Color textColo = Color(0xFFdbbb61); // ##dbbb61
-  static const Color textlighColo =
-      Color.fromARGB(255, 255, 233, 173); // ##dbbb61
+  static const Color textlighColo = Color.fromARGB(255, 255, 233, 173); // ##dbbb61
 
   static const Color colofadaa = Color(0xFF030f49);
   static const Color colotarikh = Color(0xFF8a6d33);
@@ -33,7 +32,7 @@ class Mystyle {
     fontFamily: fontFamilyName,
     color: Color(0xFFdbbb61),
     fontWeight: FontWeight.w800,
-    fontSize: 66.sp,
+    fontSize: 60.sp,
   );
   static TextStyle textMenu = TextStyle(
     fontFamily: fontFamilyName,
@@ -57,7 +56,7 @@ class Mystyle {
   static TextStyle moretitleTextStyle = TextStyle(
     fontFamily: fontFamilyName,
     color: textlighColo,
-    fontSize: 28.sp,
+    fontSize: 22.sp,
     fontWeight: FontWeight.w600,
   );
   static TextStyle butblackTextStyle = TextStyle(
@@ -109,7 +108,7 @@ class Mystyle {
     fontFamily: fontFamilyName,
     fontWeight: FontWeight.bold,
     color: Colors.white,
-    fontSize: ScreenUtil().setSp(22),
+    fontSize: ScreenUtil().setSp(16),
   );
   static TextStyle smalltxtwhite = TextStyle(
     fontFamily: fontFamilyName,
@@ -125,6 +124,21 @@ class Mystyle {
   );
 
   // -------------
+
+  static BoxDecoration cardhome() {
+    return BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(12),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey[300]!,
+          spreadRadius: 0,
+          blurRadius: 10,
+          offset: Offset(0, 3), // changes position of shadow
+        ),
+      ],
+    );
+  }
 
   static homecardDecotation2(link) {
     return BoxDecoration(
@@ -165,8 +179,7 @@ class Mystyle {
 
   static borderindice({int index = 0, Color colorop = colodark}) {
     return BoxDecoration(
-        color: colorop.withOpacity(.4),
-        border: Border.all(color: Colors.white.withOpacity(.15)));
+        color: colorop.withOpacity(.4), border: Border.all(color: Colors.white.withOpacity(.15)));
   }
 
   static bgdeco() {
@@ -175,7 +188,7 @@ class Mystyle {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          Color(0xFF282739),//0xFF322C2B
+          Color(0xFF282739), //0xFF322C2B
           Color(0xFF803D3B), //
         ],
         tileMode: TileMode.clamp,
@@ -185,10 +198,8 @@ class Mystyle {
 
   static buttDecotatio() {
     return BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Color.fromRGBO(223, 5, 113, 1),
-          Color.fromRGBO(143, 41, 124, 1)
-        ]),
+        gradient: LinearGradient(
+            colors: [Color.fromRGBO(223, 5, 113, 1), Color.fromRGBO(143, 41, 124, 1)]),
         color: Color.fromRGBO(204, 14, 116, 1));
   }
 
@@ -210,7 +221,7 @@ class Mystyle {
 
   static buttonrounded() {
     return BoxDecoration(
-      color: Color(0xFF212033),//502514
+      color: Color(0xFF212033), //502514
       borderRadius: BorderRadius.circular(100),
     );
   }
@@ -289,19 +300,17 @@ class Mystyle {
     );
   }
 
-  static snackb(scaffoldKey, txt) {
-    scaffoldKey.currentState.showSnackBar(
+  static snackb(scaffoldKey, txt, context) {
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(txt, style: truefalsewhite),
+        content: Text(txt, style: truefalsewhite.copyWith(fontSize: 12)),
         backgroundColor: Colors.black,
       ),
     );
   }
 
   // -------------
-  static bool isNullEmptyOrFalse(Object? o) =>
-      o == null || false == o || "" == o;
+  static bool isNullEmptyOrFalse(Object? o) => o == null || false == o || "" == o;
 
-  static bool isNullEmptyFalseOrZero(Object o) =>
-      o == null || false == o || 0 == o || "" == o;
+  static bool isNullEmptyFalseOrZero(Object o) => o == null || false == o || 0 == o || "" == o;
 }

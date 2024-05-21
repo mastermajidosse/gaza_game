@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gaza/bloc/feed/feed_cubit.dart';
 import 'package:gaza/bloc/systems/systems_cubit.dart';
-import 'package:gaza/models/levelM.dart';
+import 'package:gaza/models/levelQ.dart';
 import 'package:gaza/screens/others/menu.dart';
 import 'package:gaza/screens/others/splash.dart';
 import 'package:gaza/utils/mystyle.dart';
@@ -334,8 +334,8 @@ class InfoPopup extends StatelessWidget {
                         BlocProvider.of<FeedCubit>(context).levelDone(context);
                       },
                       style: ElevatedButton.styleFrom(
-                          // primary: Mystyle.rightAnswer,
-                          ),
+                        backgroundColor: Mystyle.rightAnswer,
+                      ),
                       child: Text(
                         "التالي",
                         style: Mystyle.truefalsewhite,

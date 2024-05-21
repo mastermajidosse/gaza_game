@@ -6,7 +6,7 @@ import 'package:gaza/screens/others/about_us.dart';
 import 'package:gaza/screens/others/continue.dart';
 import 'package:gaza/screens/others/levels.dart';
 import 'package:gaza/screens/others/menu.dart';
-import 'package:gaza/screens/others/more.dart';
+import 'package:gaza/screens/others/support.dart';
 import 'package:gaza/screens/others/splash.dart';
 
 const String initialRoute = Splashs.routeName;

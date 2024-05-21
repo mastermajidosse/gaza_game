@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gaza/bloc/feed/feed_cubit.dart';
 import 'package:gaza/bloc/points/points_cubit.dart';
+import 'package:gaza/models/level_menu.dart';
 import 'package:gaza/screens/gameplay/gameplay_screen.dart';
 import 'package:gaza/screens/others/menu.dart';
 import 'package:gaza/utils/mystyle.dart';
@@ -19,46 +20,292 @@ class LevelScreen extends StatefulWidget {
 class _LevelScreenState extends State<LevelScreen> {
   var scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  List<String> lvlNames = [
-    "الأول",
-    "التاني",
-    "التالت",
-    "الرابع",
-    "الخامس",
-    "السادس",
-    "السابع",
-    "التامن",
-    "التاسع",
-    "العاشر",
-    "الحادي عشر",
-    "التاني عشر",
-    "التالت عشر",
-    "الرابع عشر",
-    "الخامس عشر",
-    "السادس عشر",
-    "السابع عشر",
-    "التامن عشر",
-    "التاسع عشر",
-    "العشرون",
-    "الواحد والعشرون",
-    "التاني والعشرون",
-    "التالت والعشرون",
-    "الرابع والعشرون",
-    "الخامس والعشرون",
-    "السادس والعشرون",
-    "السابع والعشرون",
-    "التامن والعشرون",
-    "التاسع والعشرون",
-    "التلاتون",
+  List<LevelMenu> myLevels = [
+    LevelMenu(
+      title: LevelMenu().lvlNames[0],
+      colo: Colors.teal[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[1],
+      colo: Colors.teal[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[2],
+      colo: Colors.teal[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[3],
+      colo: Colors.teal[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[4],
+      colo: Colors.teal[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[5],
+      colo: Colors.teal[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[6],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[7],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[8],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[9],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[10],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[11],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[12],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[13],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[14],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[15],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[16],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[17],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[18],
+      colo: Colors.blue[100]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[19],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[20],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[21],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[22],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[23],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[24],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[25],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[26],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[27],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[28],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    LevelMenu(
+      title: LevelMenu().lvlNames[29],
+      colo: Colors.red[200]!,
+      islocked: Icon(
+        Icons.check_circle,
+        color: Colors.transparent,
+        size: 33,
+      ),
+    ),
+    // LevelMenu(
+    //   title: LevelMenu().lvlNames[30],
+    //   colo: Colors.red[200]!,
+    //   islocked: Icon(
+    //     Icons.check_circle,
+    //     color: Colors.transparent,
+    //     size: 33,
+    //   ),
+    // ),
   ];
 
   @override
   void initState() {
     super.initState();
   }
-
-  // String status = "hard";
-  int isx = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +340,7 @@ class _LevelScreenState extends State<LevelScreen> {
                 ),
               ],
             ),
-            body: state is PointsLoaded
+            body: state.loading == false
                 ? Container(
                     child: GridView.count(
                       primary: false,
@@ -101,21 +348,24 @@ class _LevelScreenState extends State<LevelScreen> {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       crossAxisCount: 3,
-                      children: List.generate(lvlNames.length, (index) {
+                      children: List.generate(30, (index) {
                         return InkWell(
                           onTap: () {
                             print(index);
                             if (Save.getlevel().contains((index + 1).toString())) {
-                              Mystyle.snackb(scaffoldKey, "لا يمكن لعب المستوى اكتر من مرة");
+                              Mystyle.snackb(
+                                  scaffoldKey,
+                                  "لا يمكن لعب المستوى اكتر من مرة يمكنك مسح بيانات اللعبة بالرجوع الى معلومات اضافية",
+                                  context);
                               return null;
                             }
                             if (Save.life <= 0) {
-                              Mystyle.snackb(scaffoldKey, "ليس لديك فرص متبقية");
+                              Mystyle.snackb(scaffoldKey, "ليس لديك فرص متبقية", context);
                               return null;
                             }
                             if (index > 14) {
-                              print("hard .. " + state.point.points.toString());
-                              if (state.point.points! > 90) {
+                              print("hard .. " + state.point!.points.toString());
+                              if (state.point!.points! > 90) {
                                 // hard
                                 BlocProvider.of<FeedCubit>(context)
                                     .getQuestions(index + 1)
@@ -128,12 +378,13 @@ class _LevelScreenState extends State<LevelScreen> {
                                   );
                                 });
                               } else {
-                                Mystyle.snackb(scaffoldKey, " نقط اكتر للعب هدا المستوى");
+                                Mystyle.snackb(
+                                    scaffoldKey, " تحتاج نقط اكتر للعب هدا المستوى", context);
                                 return null;
                               }
                             } else if (index > 5 && index < 15) {
-                              print("stat .. " + state.point.points.toString());
-                              if (state.point.points! > 30) {
+                              print("stat .. " + state.point!.points.toString());
+                              if (state.point!.points! > 30) {
                                 //medium
                                 BlocProvider.of<FeedCubit>(context)
                                     .getQuestions(index + 1)
@@ -146,7 +397,8 @@ class _LevelScreenState extends State<LevelScreen> {
                                   );
                                 });
                               } else {
-                                Mystyle.snackb(scaffoldKey, " نقط اكتر للعب هدا المستوى");
+                                Mystyle.snackb(
+                                    scaffoldKey, " تحتاج نقط اكتر للعب هدا المستوى", context);
                                 return null;
                               }
                             } else {
@@ -172,19 +424,19 @@ class _LevelScreenState extends State<LevelScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "المستوى \n" + lvlNames[index],
+                                      "المستوى \n" + myLevels[index].title.toString(),
                                       textAlign: TextAlign.center,
                                     ),
                                   ],
                                 ),
-                                color: colorOFLevel(state.point.name, index),
+                                color: myLevels[index].colo,
                               ),
                               Positioned(
                                   bottom: 3,
                                   right: 0,
                                   child: Save.getlevel().contains((index + 1).toString())
                                       ? locked("checked", index)
-                                      : locked(state.point.name, index)),
+                                      : locked(state.point!.name, index)),
                             ],
                           ),
                         );
@@ -196,31 +448,6 @@ class _LevelScreenState extends State<LevelScreen> {
         );
       },
     );
-  }
-
-  String textOfLevel(index) {
-    return index < 6
-        ? easy
-        : index > 14
-            ? hard
-            : medium;
-  }
-
-  String easy = "سهل";
-  String medium = "متوسط";
-  String hard = "صعب";
-
-  Color? colorOFLevel(status, index) {
-    print(status);
-    if (index < 6) {
-      return Colors.teal[100];
-    } else if ((status != "easy") && index < 20) {
-      return Colors.blue[100];
-    } else if ((status == "hard") && index >= 20) {
-      return Colors.red[200];
-    } else {
-      return Colors.grey;
-    }
   }
 
   Icon locked(status, index) {
@@ -238,7 +465,7 @@ class _LevelScreenState extends State<LevelScreen> {
         color: Colors.black45,
         size: 33,
       );
-    } else if (status != "hard" && index >= 20) {
+    } else if (status != "hard" && index > 19) {
       return Icon(
         Icons.lock,
         color: Colors.black87,

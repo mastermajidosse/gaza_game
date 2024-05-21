@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:gaza/bloc/provider_setup.dart';
-import 'package:gaza/screens/others/new_splash.dart';
 import 'package:gaza/screens/others/splash.dart';
 import 'utils/route_genetator.dart' as router;
 

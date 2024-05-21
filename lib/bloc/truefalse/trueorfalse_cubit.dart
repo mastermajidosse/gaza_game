@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gaza/bloc/feed/feed_cubit.dart';
 import 'package:gaza/bloc/points/points_cubit.dart';
 import 'package:gaza/bloc/systems/systems_cubit.dart';
-import 'package:gaza/models/levelM.dart';
+import 'package:gaza/models/levelQ.dart';
 
 part 'trueorfalse_state.dart';
 

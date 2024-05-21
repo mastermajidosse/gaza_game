@@ -138,7 +138,12 @@ class _GamePlayState extends State<GamePlay> with TickerProviderStateMixin {
                 children: <Widget>[
                   Text(
                     " للتأكد من اللعب النزيه ",
-                    style: Mystyle.blackboldtexts,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: const Color.fromARGB(137, 30, 30, 30),
+                      fontSize: ScreenUtil().setSp(22),
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 10),
                   Padding(
@@ -147,7 +152,10 @@ class _GamePlayState extends State<GamePlay> with TickerProviderStateMixin {
                       "الضغط على رجوع يسبب فقدان فرصة",
                       style: Mystyle.truefalsewhite.copyWith(
                         color: Colors.grey,
+                        fontSize: ScreenUtil().setSp(18),
+                        fontWeight: FontWeight.normal,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -169,7 +177,7 @@ class _GamePlayState extends State<GamePlay> with TickerProviderStateMixin {
                           ),
                       child: Text(
                         "رجوع",
-                        style: Mystyle.truefalsewhite,
+                        style: Mystyle.smalltxt,
                       ),
                     ),
                   ),

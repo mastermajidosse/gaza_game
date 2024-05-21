@@ -35,14 +35,9 @@ class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
     dotRadius = widget.dotRadius;
 
     Future.delayed(Duration(seconds: 5)).then((_) {
-      // BlocProvider.of<SystemsCubit>(context).clear();
+      // BlocProvider.of<SystemsCubit>(context).clear(context);
 
-      BlocProvider.of<SystemsCubit>(context).initiateit();
-
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => ContinueScreen()),//OnboardingScreen
-      );
+      BlocProvider.of<SystemsCubit>(context).initiateit(context);
     });
 
     controller = AnimationController(

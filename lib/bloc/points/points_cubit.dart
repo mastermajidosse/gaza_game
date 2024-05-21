@@ -7,7 +7,7 @@ import 'package:gaza/utils/save.dart';
 part 'points_state.dart';
 
 class PointsCubit extends Cubit<PointsState> {
-  PointsCubit() : super(PointsInitial());
+  PointsCubit() : super(PointsState());
 
   int point = 0;
 
@@ -15,9 +15,14 @@ class PointsCubit extends Cubit<PointsState> {
 
   PointsModel pointsModel = PointsModel();
   loadPoints() async {
-    emit(PointsLoading());
+    emit(PointsState(loading: true));
+    print("--- loadPoint ---...");
     try {
       point = await Save.getpoint() ?? 0;
+      // point = 55;
+      // print("--- progress ---..." + getProgressToNxtLvl(point).toString());
+      // print("--- nxtlevel ---..." + getReachable(point).toString());
+      // print("--- name ---..." + getStatus(point).toString());
       pointsModel = PointsModel(
         points: point,
         progress: getProgressToNxtLvl(point),
@@ -25,14 +30,14 @@ class PointsCubit extends Cubit<PointsState> {
         name: getStatus(point),
       );
 
-      emit(PointsLoaded(pointsModel));
+      emit(PointsState(loading: false, point: pointsModel));
     } catch (e) {
-      emit(PointsError(e.toString()));
+      emit(PointsState(loading: false, errorMessage: e.toString()));
     }
   }
 
   addPoints(context, {int x = 6}) async {
-    emit(PointsLoading());
+    emit(PointsState(loading: true));
     print("object");
     try {
       int point = await Save.getpoint() ?? 0;
@@ -45,14 +50,14 @@ class PointsCubit extends Cubit<PointsState> {
         nxtlevel: getReachable(newpoint),
         name: getStatus(newpoint),
       );
-      emit(PointsLoaded(pointsModel));
+      emit(PointsState(loading: false, point: pointsModel));
     } catch (e) {
-      emit(PointsError(e.toString()));
+      emit(PointsState(loading: false, errorMessage: e.toString()));
     }
   }
 
   removePoint(int level) async {
-    emit(PointsLoading());
+    emit(PointsState(loading: true));
     try {
       int point = await Save.getpoint() ?? 0;
 
@@ -66,9 +71,9 @@ class PointsCubit extends Cubit<PointsState> {
         nxtlevel: getReachable(newpoint),
         name: getStatus(newpoint),
       );
-      emit(PointsLoaded(pointsModel));
+      emit(PointsState(loading: false, point: pointsModel));
     } catch (e) {
-      emit(PointsError(e.toString()));
+      emit(PointsState(errorMessage: e.toString()));
     }
   }
 
@@ -106,6 +111,7 @@ class PointsCubit extends Cubit<PointsState> {
   Color? colorOFLevel(index) {
     if (index < 6) {
       return Colors.teal[100];
+      // why 15 ?? i have to 20
     } else if ((status == "medium" || status == "hard") && index < 15) {
       return Colors.teal[200];
     } else if (status == "hard") {

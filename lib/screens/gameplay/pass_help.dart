@@ -6,7 +6,7 @@ import 'package:gaza/bloc/fullanswear/fullanswear_cubit.dart';
 import 'package:gaza/bloc/multi/multi_cubit.dart';
 import 'package:gaza/bloc/points/points_cubit.dart';
 import 'package:gaza/bloc/truefalse/trueorfalse_cubit.dart';
-import 'package:gaza/models/levelM.dart';
+import 'package:gaza/models/levelQ.dart';
 import 'package:gaza/screens/gameplay/answearone_fill.dart';
 import 'package:gaza/screens/gameplay/keyboard_bottom.dart';
 import 'package:gaza/utils/mystyle.dart';
@@ -50,14 +50,19 @@ class GameButtom extends StatelessWidget {
                     if (state3 is FeedLoaded)
                       return GestureDetector(
                         onTap: () {
-                          if (qst.type != "truefalse" && state.help == true) {
-                            BlocProvider.of<FeedCubit>(context)
-                                .removehelp(state.index, qst, scaffoldKey);
+                          if (state.help == true) {
+                            print(qst.type);
+                            // khaassha tkhalf truefalse and one
+                            if (qst.type != "truefalse" && qst.type != "one") {
+                              // print("hollaaaaaaa");
+                              BlocProvider.of<FeedCubit>(context)
+                                  .removehelp(state.index, qst, scaffoldKey);
+                            }
                           }
                         },
                         child: Container(
                           alignment: Alignment.center,
-                          decoration: qst.type == "truefalse"
+                          decoration: qst.type == "truefalse" || qst.type == "one"
                               ? Mystyle.borderindice(colorop: Colors.black)
                               : state.help == true
                                   ? Mystyle.borderindice()

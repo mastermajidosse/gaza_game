@@ -15,7 +15,7 @@ class ContinueScreen extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
-        backgroundColor: Color(0xFF282739),//552a16
+        backgroundColor: Color(0xFF282739), //552a16
         body: SafeArea(
           child: Container(
             width: double.infinity,
@@ -26,13 +26,14 @@ class ContinueScreen extends StatelessWidget {
                   flex: 3,
                   child: Center(
                     child: InkWell(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(builder: (context) => Menu()),
-                          );
-                        },
-                        child: Image.asset("assets/icon.png")),
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => Menu()),
+                        );
+                      },
+                      child: Image.asset("assets/icon.png"),
+                    ),
                   ),
                   //logo
                 ),

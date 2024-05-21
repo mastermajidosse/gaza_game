@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gaza/bloc/feed/feed_cubit.dart';
 import 'package:gaza/bloc/multi/multi_cubit.dart';
-import 'package:gaza/models/levelM.dart';
+import 'package:gaza/models/levelQ.dart';
 import 'package:gaza/utils/mystyle.dart';
 import 'package:gaza/screens/gameplay/info_popup.dart';
 

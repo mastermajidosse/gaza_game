@@ -3,7 +3,7 @@ class LevelM {
   String image;
   // truefalse , multi , one
   String? type;
-  // easy , moderate , hard
+  // easy , medium , hard
   String? difficulty;
   String? qst;
   String? answers;
@@ -23,7 +23,7 @@ class LevelM {
 
   int point(difficult) => difficult == "easy"
       ? 5
-      : difficult == "moderate"
+      : difficult == "medium"
           ? 15
           : 20;
 

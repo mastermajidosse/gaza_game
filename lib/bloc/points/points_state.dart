@@ -1,28 +1,29 @@
 part of 'points_cubit.dart';
 
-abstract class PointsState extends Equatable {
-  const PointsState();
+class PointsState {
+  const PointsState({
+    this.point,
+    this.errorMessage,
+    this.drop,
+    this.loading,
+  });
 
-  @override
-  List<Object> get props => [];
-}
+  final PointsModel? point;
+  final List<String>? drop;
+  final String? errorMessage;
+  final bool? loading;
 
-class PointsInitial extends PointsState {}
-
-class PointsLoading extends PointsState {}
-
-class PointsLoaded extends PointsState {
-  final PointsModel point;
-  const PointsLoaded(this.point);
-
-  @override
-  List<Object> get props => [point];
-}
-
-class PointsError extends PointsState {
-  final String message;
-  const PointsError(this.message);
-
-  @override
-  List<Object> get props => [message];
+  PointsState copyWith({
+    String? errorMessage,
+    PointsModel? point,
+    List<String>? drop,
+    bool? loading,
+  }) {
+    return PointsState(
+      point: point ?? this.point,
+      errorMessage: errorMessage ?? this.errorMessage,
+      drop: drop ?? this.drop,
+      loading: loading ?? this.loading,
+    );
+  }
 }

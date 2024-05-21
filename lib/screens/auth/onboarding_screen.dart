@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gaza/models/onBordingModel.dart';
 import 'package:gaza/screens/others/continue.dart';
+import 'package:gaza/screens/others/menu.dart';
 import 'package:gaza/utils/mystyle.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -18,30 +19,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   //logowalk.svg
   List onBoardingData = [
     OnBoardingData(
-      title: "🌟Welcome to the Arena!🌟",
+      firsttitle: "هدف #1",
+      title: "🌟نشر الوعي !🌟",
       desc:
-          "Step into the ultimate content creation arena! \n\n Where your creativity battles for glory. Ready to be a star? 🚀 Let's go!",
-      imageAssetsPath: "assets/images/rule0.png",
+          "اهم هدف هو نشر الوعي بما حدت في الماضي وما حدت في حرب غزة الحالية والاحاطة بما حدت حيت ان الأغلبية الساحقة في عالمنا لا تقرأ ولا تبحت عن قراءة التاريخ لدلك اعظم عطاء هو ان تبقى دكرى ما حدق في ادهان الناس",
+      imageAssetsPath: "assets/goal1.png",
     ),
     OnBoardingData(
-      firsttitle: "RULE #1",
-      title: "⚔️ 1VS1 Challenges ⚔️",
+      firsttitle: "هدف #2",
+      title: "⚔️ ترسيخ القضية في الجيل الصاعد ⚔️",
       desc:
-          "Ready for a content duel? Battle creators globally in viral challenges. Show off your creative superpowers!",
-      imageAssetsPath: "assets/images/rule1.png",
+          "انشاء جيل على علم ودراية واستمرار القضية في عقولهم مهما حاولت الدول العظمى طمس التاريخ وتغييره لخدمة مصالحهم",
+      imageAssetsPath: "assets/goal2.png",
     ),
     OnBoardingData(
-      firsttitle: "RULE #2",
-      title: "🗳️ Every Vote Rocks! 🗳️",
+      firsttitle: "هدف #3",
+      title: "🌐 انشاء سوشل ميديا عربية ! 🌐",
       desc:
-          "At Creaskale, each vote is a voice for art! Help crown the kings and queens of creativity.",
-      imageAssetsPath: "assets/images/rule2.png",
+          "كهدف تانوي للتطبيق ، ما اكتشفه العالم العربي ان الحرية المزعومة في مواقع التواصل هي حرية مشروطة لخدمة مصالح الغرب وحتى هده اللحظة لايوجد مكان للعرب فيه الحرية المطلقة لدلك بادن الله سنعمل على انشاء هدا المكان",
+      imageAssetsPath: "assets/goal3.png",
     ),
     OnBoardingData(
-      firsttitle: "RULE #3",
-      title: "🏆  Novice to Legend 🏆",
-      desc: "Each challenge counts! Win and climb. Become a Creaskale legend!",
-      imageAssetsPath: "assets/images/rule3.png",
+      firsttitle: "هدف #4",
+      title: "🙏 تقديم مساعدات مادية مباشرة  🙏",
+      desc:
+          "بالطبع الهدف الاضافي والطريقة المباشرة للمساعدة هو مساعدة المنظمات و الأفراد داخل غزة بشكل مادي مباشر",
+      imageAssetsPath: "assets/goal4.png",
     ),
   ];
 
@@ -74,57 +77,54 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         SizedBox(height: 25.h),
-                        onBoardingData[index].firsttitle == ""
-                            ? Container()
-                            : Container(
-                                // height: 38.h,
-                                width: 150,
-                                padding: EdgeInsets.only(bottom: 8),
-                                decoration: BoxDecoration(
-                                  // border: Border.all (color: Colors.red, width: 2),
-                                  border: Border(
-                                      bottom: BorderSide(
-                                    color: Mystyle.primarycolo,
-                                    width: 10,
-                                  )),
-                                ),
-                                child: Text(
-                                  onBoardingData[index].firsttitle,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: Mystyle.primarycolo,
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
+                        Container(
+                          // height: 38.h,
+                          width: 150,
+                          padding: EdgeInsets.only(bottom: 8),
+                          decoration: BoxDecoration(
+                            // border: Border.all (color: Colors.red, width: 2),
+                            border: Border(
+                                bottom: BorderSide(
+                              color: Mystyle.primarycolo,
+                              width: 10,
+                            )),
+                          ),
+                          child: Text(
+                            onBoardingData[index].firsttitle,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Mystyle.primarycolo,
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                         SizedBox(height: 50.h),
                         Container(
                           height: 300.h,
                           width: _deviceWidth - 50,
                           alignment: Alignment.center,
-                          child: // SvgPicture.asset(
-                              Image.asset(
+                          child: Image.asset(
                             '${onBoardingData[index].imageAssetsPath}',
-                             width: 300,
-                                height: 300,
+                            width: 300,
+                            height: 300,
                           ),
                         ),
-                        SizedBox(height: 25.h),
+                        SizedBox(height: 12.h),
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
                             '${onBoardingData[index].title}',
-                            style:  TextStyle(
-                                color: Mystyle.primarycolo,
-                                fontSize: 26.sp,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: Mystyle.fontFamilyName,
-                                ),
+                            style: TextStyle(
+                              color: Mystyle.primarycolo,
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: Mystyle.fontFamilyName,
+                            ),
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        SizedBox(height: 80.h),
+                        SizedBox(height: 55.h),
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
@@ -168,7 +168,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ContinueScreen(),
+                            builder: (context) => Menu(),
                           ),
                         );
 
@@ -189,10 +189,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     },
                     onLongPress: () {
                       // Phoenix.rebirth(context);
-                      // Navigator.pushReplacement(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => SplashHome(true)));
+                      Navigator.pushReplacement(
+                          context, MaterialPageRoute(builder: (context) => Menu()));
                     },
                     child: Container(
                       height: 80.h,
@@ -202,11 +200,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       color: Colors.transparent,
                       child: Text(
                         currentIndex == onBoardingData.length - 1 ? "Start" : 'Next',
-                        style:TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w700,
-                              fontSize: ScreenUtil().setSp(13),
-                              ) .copyWith(
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w700,
+                          fontSize: ScreenUtil().setSp(13),
+                        ).copyWith(
                           color: Colors.blue,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
